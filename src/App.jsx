@@ -122,6 +122,7 @@ function App() {
             className='bg-violet-50 focus:bg-white focus:border-3 focus:border-amber-300 rounded-full px-5 py-1 task-input w-[18%] focus:w-[90%] transition-all' />
             <button onClick={handleSave} disabled={todo.length <= 3} className='mx-2 cursor-pointer bg-violet-800 hover:border-3 hover:border-red-600 hover:bg-violet-950 disabled:bg-blue-100 p-4 py-2 text-sm font-bold text-white rounded-full hover:shadow-[0_0_0_2px_#a6a9fd] transition-all'>Save</button>
           </div>
+          <div className="text-xs italic text-violet-950 underline">Note: Press Enter/Return to Save task</div>
         </div>
 
         <div><label className="mx-4" htmlfor="show"><input className='my-4' id="show" onChange={toggleFinished} type="checkbox" checked={showFinished} />{" "}Show Finished</label></div>
