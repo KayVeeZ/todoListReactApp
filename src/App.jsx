@@ -107,8 +107,8 @@ function App() {
             Add a Task
           </h2>
           <div className="flex">
-            <input onChange={handleChange} placeholder="Enter a task..." value={todo} type="text" className='bg-violet-50 focus:bg-white rounded-full px-5 py-1 task-input w-[18%] focus:w-[90%] transition-all' />
-            <button onClick={handleSave} disabled={todo.length <= 3} className='mx-2 cursor-pointer bg-violet-800 hover:bg-violet-950 disabled:bg-blue-100 p-4 py-2 text-sm font-bold text-white rounded-full hover:shadow-[0_0_0_2px_#a6a9fd] transition-all'>Save</button>
+            <input onChange={handleChange} placeholder="Enter a task..." value={todo} type="text" className='bg-violet-50 focus:bg-white focus:border-3 focus:border-amber-300 rounded-full px-5 py-1 task-input w-[18%] focus:w-[90%] transition-all' />
+            <button onClick={handleSave} disabled={todo.length <= 3} className='mx-2 cursor-pointer bg-violet-800 hover:border-3 hover:border-red-600 hover:bg-violet-950 disabled:bg-blue-100 p-4 py-2 text-sm font-bold text-white rounded-full hover:shadow-[0_0_0_2px_#a6a9fd] transition-all'>Save</button>
           </div>
         </div>
 
