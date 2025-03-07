@@ -32,6 +32,7 @@ function App() {
 
 
   const handleSave = () => {
+    if (todo.length <= 3) return; // Prevent saving if the task is too short
     const newId = uuidv4();
     const newTodos = [...todos, { id: newId, todo, isCompleted: false }];
     setTodo("");
@@ -86,6 +87,12 @@ function App() {
     saveToLS();
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && todo.length > 3) {
+      handleSave();
+    }
+  };
+
   const saveToLS = (newTodos = todos) => {
     localStorage.setItem("todos", JSON.stringify(newTodos));
   }
@@ -107,7 +114,12 @@ function App() {
             Add a Task
           </h2>
           <div className="flex">
-            <input onChange={handleChange} placeholder="Enter a task..." value={todo} type="text" className='bg-violet-50 focus:bg-white focus:border-3 focus:border-amber-300 rounded-full px-5 py-1 task-input w-[18%] focus:w-[90%] transition-all' />
+            <input onChange={handleChange} 
+            onKeyDown={handleKeyDown}
+            placeholder="Enter a task..." 
+            value={todo} 
+            type="text" 
+            className='bg-violet-50 focus:bg-white focus:border-3 focus:border-amber-300 rounded-full px-5 py-1 task-input w-[18%] focus:w-[90%] transition-all' />
             <button onClick={handleSave} disabled={todo.length <= 3} className='mx-2 cursor-pointer bg-violet-800 hover:border-3 hover:border-red-600 hover:bg-violet-950 disabled:bg-blue-100 p-4 py-2 text-sm font-bold text-white rounded-full hover:shadow-[0_0_0_2px_#a6a9fd] transition-all'>Save</button>
           </div>
         </div>
