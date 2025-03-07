@@ -1,6 +1,7 @@
 name: Vite React Tailwind To-Do List
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
